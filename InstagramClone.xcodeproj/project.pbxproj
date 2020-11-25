@@ -11,8 +11,14 @@
 		159C5955256EBA8B0072C1C2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159C5954256EBA8B0072C1C2 /* SceneDelegate.swift */; };
 		159C5957256EBA8B0072C1C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159C5956256EBA8B0072C1C2 /* ViewController.swift */; };
 		159C595A256EBA8B0072C1C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 159C5958256EBA8B0072C1C2 /* Main.storyboard */; };
-		159C595C256EBA8E0072C1C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 159C595B256EBA8E0072C1C2 /* Assets.xcassets */; };
 		159C595F256EBA8E0072C1C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 159C595D256EBA8E0072C1C2 /* LaunchScreen.storyboard */; };
+		159C5970256EC9060072C1C2 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159C596F256EC9060072C1C2 /* MainTabController.swift */; };
+		159C5973256ECA8D0072C1C2 /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159C5972256ECA8D0072C1C2 /* FeedController.swift */; };
+		159C5976256ECA9B0072C1C2 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159C5975256ECA9B0072C1C2 /* SearchController.swift */; };
+		159C5979256ECAB00072C1C2 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159C5978256ECAB00072C1C2 /* NotificationController.swift */; };
+		159C597C256ECAC10072C1C2 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159C597B256ECAC10072C1C2 /* ProfileController.swift */; };
+		159C597F256ECAD20072C1C2 /* ImageSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159C597E256ECAD20072C1C2 /* ImageSelectorController.swift */; };
+		159C5982256ECE190072C1C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 159C5981256ECE190072C1C2 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,9 +27,15 @@
 		159C5954256EBA8B0072C1C2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		159C5956256EBA8B0072C1C2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		159C5959256EBA8B0072C1C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		159C595B256EBA8E0072C1C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		159C595E256EBA8E0072C1C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		159C5960256EBA8E0072C1C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		159C596F256EC9060072C1C2 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
+		159C5972256ECA8D0072C1C2 /* FeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
+		159C5975256ECA9B0072C1C2 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
+		159C5978256ECAB00072C1C2 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		159C597B256ECAC10072C1C2 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		159C597E256ECAD20072C1C2 /* ImageSelectorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectorController.swift; sourceTree = "<group>"; };
+		159C5981256ECE190072C1C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../Downloads/Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +68,69 @@
 		159C5951256EBA8B0072C1C2 /* InstagramClone */ = {
 			isa = PBXGroup;
 			children = (
+				159C596D256EC0650072C1C2 /* Model */,
+				159C596C256EC0630072C1C2 /* View */,
+				159C596B256EC05F0072C1C2 /* ViewModel */,
+				159C596A256EC0580072C1C2 /* Controller */,
+				159C5968256EC04E0072C1C2 /* API */,
+				159C5967256EC0400072C1C2 /* Utils */,
 				159C5952256EBA8B0072C1C2 /* AppDelegate.swift */,
 				159C5954256EBA8B0072C1C2 /* SceneDelegate.swift */,
 				159C5956256EBA8B0072C1C2 /* ViewController.swift */,
 				159C5958256EBA8B0072C1C2 /* Main.storyboard */,
-				159C595B256EBA8E0072C1C2 /* Assets.xcassets */,
+				159C5981256ECE190072C1C2 /* Assets.xcassets */,
 				159C595D256EBA8E0072C1C2 /* LaunchScreen.storyboard */,
 				159C5960256EBA8E0072C1C2 /* Info.plist */,
 			);
 			path = InstagramClone;
+			sourceTree = "<group>";
+		};
+		159C5967256EC0400072C1C2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		159C5968256EC04E0072C1C2 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		159C596A256EC0580072C1C2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				159C596F256EC9060072C1C2 /* MainTabController.swift */,
+				159C5972256ECA8D0072C1C2 /* FeedController.swift */,
+				159C5975256ECA9B0072C1C2 /* SearchController.swift */,
+				159C5978256ECAB00072C1C2 /* NotificationController.swift */,
+				159C597B256ECAC10072C1C2 /* ProfileController.swift */,
+				159C597E256ECAD20072C1C2 /* ImageSelectorController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		159C596B256EC05F0072C1C2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		159C596C256EC0630072C1C2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		159C596D256EC0650072C1C2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,7 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				159C595F256EBA8E0072C1C2 /* LaunchScreen.storyboard in Resources */,
-				159C595C256EBA8E0072C1C2 /* Assets.xcassets in Resources */,
+				159C5982256ECE190072C1C2 /* Assets.xcassets in Resources */,
 				159C595A256EBA8B0072C1C2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,8 +204,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				159C5957256EBA8B0072C1C2 /* ViewController.swift in Sources */,
+				159C5976256ECA9B0072C1C2 /* SearchController.swift in Sources */,
 				159C5953256EBA8B0072C1C2 /* AppDelegate.swift in Sources */,
+				159C5979256ECAB00072C1C2 /* NotificationController.swift in Sources */,
+				159C597F256ECAD20072C1C2 /* ImageSelectorController.swift in Sources */,
+				159C5973256ECA8D0072C1C2 /* FeedController.swift in Sources */,
+				159C5970256EC9060072C1C2 /* MainTabController.swift in Sources */,
 				159C5955256EBA8B0072C1C2 /* SceneDelegate.swift in Sources */,
+				159C597C256ECAC10072C1C2 /* ProfileController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +361,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ATGLF89TD8;
 				INFOPLIST_FILE = InstagramClone/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,7 +369,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.studentProyect.InstagramClone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -308,6 +381,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ATGLF89TD8;
 				INFOPLIST_FILE = InstagramClone/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -315,7 +389,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.studentProyect.InstagramClone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
