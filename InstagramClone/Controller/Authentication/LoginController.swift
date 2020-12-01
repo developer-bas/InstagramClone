@@ -51,7 +51,6 @@ class LoginController: UIViewController{
         button.attributedTittle(fistPart: "Don't  have an account?  ", secondPart: "Sign Up")
         button.addTarget(self, action: #selector(handleShowSignUp), for: .touchUpInside)
         return button
-        
     }()
     
 //    MARK: -Lifecycle
