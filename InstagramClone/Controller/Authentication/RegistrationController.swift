@@ -16,6 +16,7 @@ class RegistrationController: UIViewController{
     private let plushPhotoButton : UIButton = {
         let button = UIButton(type: .system)
         button.setImage(#imageLiteral(resourceName: "plus_photo"), for: .normal)
+        button.addTarget(self, action: #selector(handleProfilePhotoSelect), for: .touchUpInside)
         button.tintColor = .white
         
         return button
@@ -86,6 +87,14 @@ class RegistrationController: UIViewController{
        updateForm()
         
     }
+    
+    @objc func handleProfilePhotoSelect(){
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.allowsEditing = true
+        
+        present(picker, animated: true, completion: nil)
+    }
 //    MARK: - Helpers
     func configureUI(){
         configureGradientLayer()
@@ -125,5 +134,18 @@ extension RegistrationController: FormViewModel {
         signUpButton.backgroundColor = viewModel.buttonBackgroundColor
         signUpButton.setTitleColor(viewModel.buttonTitleColor, for: .normal)
         signUpButton.isEnabled = viewModel.formIsValid
+    }
+}
+
+extension RegistrationController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let selectorImage = info[.editedImage] as? UIImage else {return}
+        plushPhotoButton.layer.cornerRadius = plushPhotoButton.frame.width / 2
+        plushPhotoButton.layer.masksToBounds = true
+        plushPhotoButton.layer.borderColor = UIColor.white.cgColor
+        plushPhotoButton.layer.borderWidth = 2
+        plushPhotoButton.setImage(selectorImage.withRenderingMode(.alwaysOriginal), for: .normal)
+        
+        self.dismiss(animated: true, completion: nil)
     }
 }
