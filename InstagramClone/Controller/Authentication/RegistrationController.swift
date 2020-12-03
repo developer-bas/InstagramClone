@@ -69,13 +69,19 @@ class RegistrationController: UIViewController{
     @objc func handleSignUp(){
         guard let email = emailTextField.text  else {return}
         guard let password = passwordTextField.text else {return}
-        guard let username = usernameTextField.text else {return}
+        guard let username = usernameTextField.text?.lowercased() else {return}
         guard let fullname = fullnameTextField.text else {return}
         guard  let profileImage = profileImage else { return }
         
         let credentials = AuthCredentials(email: email, password: password, fullname: fullname, username: username, profileImage: profileImage)
         
-        AuthService.registerUser(withCredential: credentials)
+        AuthService.registerUser(withCredential: credentials) { error in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            print("successfully registered user ")
+        }
     }
     
     @objc func handleShowLogin(){
