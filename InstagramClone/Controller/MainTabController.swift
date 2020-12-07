@@ -23,6 +23,7 @@ class MainTabController : UITabBarController{
         if Auth.auth().currentUser == nil{
             DispatchQueue.main.async {
                 let controller = LoginController()
+                controller.delegate = self
                 let nav = UINavigationController(rootViewController: controller)
                 nav.modalPresentationStyle = .fullScreen
                 self.present(nav, animated: true, completion: nil)
@@ -65,5 +66,14 @@ class MainTabController : UITabBarController{
         nav.navigationBar.tintColor = .black
         return nav
     }
+    
+}
+
+extension MainTabController: AuthenticationDelegate{
+    func authenticationDidComplete() {
+        print("")
+        self.dismiss(animated: true , completion: nil)
+    }
+    
     
 }

@@ -20,9 +20,9 @@ class ProfileController: UICollectionViewController {
     }
     
 //    MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configureCollectionView()
         fetchUser()
     }
@@ -37,7 +37,7 @@ class ProfileController: UICollectionViewController {
     }
     
 //    MARK: - Helpers
-    func configureCollectionView(){
+func configureCollectionView(){
         collectionView.backgroundColor = .white
         collectionView.register(ProfileCell.self, forCellWithReuseIdentifier: cellIdentifier)
         collectionView.register(ProfileHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerIdentifier)
@@ -69,7 +69,7 @@ extension ProfileController {
     }
 }
 //  MARK: - UICollectionViewDelegate
-extension ProfileController{
+extension ProfileController {
     
 }
 //  MARK: - UICollectionViewDelegateFlowLoyout
