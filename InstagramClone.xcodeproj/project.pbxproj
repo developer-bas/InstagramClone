@@ -35,6 +35,7 @@
 		159C59FD257B4A470072C1C2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159C59FC257B4A470072C1C2 /* User.swift */; };
 		159C5A00257C2A820072C1C2 /* ProfileHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159C59FF257C2A820072C1C2 /* ProfileHeaderViewModel.swift */; };
 		159C5A032580373A0072C1C2 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159C5A02258037390072C1C2 /* UserCell.swift */; };
+		159C5A0625808E690072C1C2 /* UserCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159C5A0525808E690072C1C2 /* UserCellViewModel.swift */; };
 		98518D1BCB92592E073DCB94 /* Pods_InstagramClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 120FFCFE0DF9B90EA7C288DC /* Pods_InstagramClone.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 		159C59FC257B4A470072C1C2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		159C59FF257C2A820072C1C2 /* ProfileHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderViewModel.swift; sourceTree = "<group>"; };
 		159C5A02258037390072C1C2 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		159C5A0525808E690072C1C2 /* UserCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellViewModel.swift; sourceTree = "<group>"; };
 		8C48B3FCF8EB9E99EC5C7A15 /* Pods-InstagramClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramClone.release.xcconfig"; path = "Target Support Files/Pods-InstagramClone/Pods-InstagramClone.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -163,6 +165,7 @@
 			children = (
 				159C5997257725B00072C1C2 /* AuthenticationViewModel.swift */,
 				159C59FF257C2A820072C1C2 /* ProfileHeaderViewModel.swift */,
+				159C5A0525808E690072C1C2 /* UserCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 				159C5A00257C2A820072C1C2 /* ProfileHeaderViewModel.swift in Sources */,
 				159C59FA257B48980072C1C2 /* Constants.swift in Sources */,
 				159C5970256EC9060072C1C2 /* MainTabController.swift in Sources */,
+				159C5A0625808E690072C1C2 /* UserCellViewModel.swift in Sources */,
 				159C5955256EBA8B0072C1C2 /* SceneDelegate.swift in Sources */,
 				159C598B256ED9E80072C1C2 /* Extensions.swift in Sources */,
 				159C59B725782FC50072C1C2 /* imageUploader.swift in Sources */,
