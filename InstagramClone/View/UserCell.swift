@@ -9,6 +9,12 @@ import UIKit
 
 class UserCell :UITableViewCell{
 //    MARK: - Properties
+    var user: User?{
+        didSet{
+            fullnameLabel.text = user?.fullname
+            usernameLabel.text = user?.username
+        }
+    }
     
     private let profileImageView: UIImageView = {
         let iv = UIImageView()
