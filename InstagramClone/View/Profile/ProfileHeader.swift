@@ -8,6 +8,10 @@
 import UIKit
 import SDWebImage
 
+protocol ProfileHeaderDelegate: class {
+    func header(_ profileHeader: ProfileHeader, didTapActionButtonFor user: User)
+}
+
 class ProfileHeader: UICollectionReusableView {
     
 //    MARK: - Properties
@@ -16,6 +20,9 @@ class ProfileHeader: UICollectionReusableView {
             configure()
         }
     }
+    
+    weak var delegate : ProfileHeaderDelegate?
+    
     
     private let profileImageView: UIImageView = {
         let iv = UIImageView()
@@ -40,7 +47,7 @@ class ProfileHeader: UICollectionReusableView {
         button.layer.borderWidth = 0.5
         button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         button.setTitleColor(.black, for: .normal)
-        button.addTarget(self, action: #selector(handleEditProfileFollowTapped), for: .touchUpOutside)
+        button.addTarget(self, action: #selector(handleEditProfileFollowTapped), for: .touchUpInside)
         
         return button
         
@@ -144,7 +151,8 @@ class ProfileHeader: UICollectionReusableView {
     }
 //    MARK: - Actions
     @objc func handleEditProfileFollowTapped(){
-        
+        guard let viewModel = viewModel else {return}
+        delegate?.header(self, didTapActionButtonFor: viewModel.user)
     }
 //    MARK: - Helpers
     func attributedStackText(value: Int, label: String)-> NSAttributedString{
@@ -165,3 +173,5 @@ class ProfileHeader: UICollectionReusableView {
         editProfileFollowButton.backgroundColor = viewModel.followButtonBackgroundColor
     }
 }
+
+
