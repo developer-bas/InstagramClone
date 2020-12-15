@@ -19,10 +19,12 @@ class UploadPostController: UIViewController {
         return iv
     }()
     
-    private let captionTextView : InputTextView = {
+    private lazy var captionTextView : InputTextView = {
         let tv = InputTextView()
         tv.placeHolderText = "Enter caption ..."
+        tv.backgroundColor = .blue
         tv.font = UIFont.systemFont(ofSize: 16)
+        tv.delegate = self
         return tv
     }()
     
@@ -50,6 +52,12 @@ class UploadPostController: UIViewController {
     }
 //   MARK: - Helpers
     
+    func checkMaxLengh(_ textView: UITextView){
+        if (textView.text.count) > 100 {
+            textView.deleteBackward()
+        }
+    }
+    
     func configureUI(){
         view.backgroundColor = .white
         
@@ -68,10 +76,22 @@ class UploadPostController: UIViewController {
         photoImageView.layer.cornerRadius = 8
         
         view.addSubview(captionTextView)
-        captionTextView.anchor(top: photoImageView.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 16, paddingLeft: 12, paddingRight: 12, width: 64, height: 64)
+        captionTextView.anchor(top: photoImageView.bottomAnchor, left: view.leftAnchor,  paddingTop: 16, paddingLeft: 12, paddingRight: 12, width: 64, height: 64)
+        
+        captionTextView.setDimensions(height: 64, width: view.frame.width - 15)
         
         view.addSubview(characterCounterLabel)
-        characterCounterLabel.anchor(top: captionTextView.bottomAnchor,right: view.rightAnchor, paddingTop: 12, paddingRight: 12)
+        characterCounterLabel.anchor(top: captionTextView.bottomAnchor,right: view.rightAnchor, paddingBottom: -10, paddingRight: 12)
     }
     
+}
+
+extension UploadPostController : UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        checkMaxLengh(textView)
+        let count = textView.text.count
+        characterCounterLabel.text = "\(count)/100"
+        
+        captionTextView.placeHolderLabel.isHidden = !captionTextView.text.isEmpty
+    }
 }
