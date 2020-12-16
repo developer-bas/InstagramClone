@@ -10,6 +10,11 @@ import UIKit
 class FeedCell : UICollectionViewCell{
 
 //    MARK: - Properties
+    var viewModel: PostViewModel? {
+        didSet{
+            configureUI()
+        }
+    }
     
     private let profileImageView : UIImageView  = {
         let image = UIImageView()
@@ -70,7 +75,7 @@ class FeedCell : UICollectionViewCell{
     
     private let captionLabel: UILabel = {
         let label = UILabel()
-        label.text = "some text"
+        
         label.font = UIFont.boldSystemFont(ofSize: 14)
         return label
     }()
@@ -128,6 +133,12 @@ class FeedCell : UICollectionViewCell{
         
     }
 //    MARK: - Helpers
+    func configureUI(){
+        guard let viewModel = viewModel else {return}
+        
+        captionLabel.text = viewModel.caption
+        postImageView.sd_setImage(with: viewModel.imageUrl)
+    }
     
     func configureActionButtons(){
         let stackView = UIStackView(arrangedSubviews: [likeButton,commentButton,shareButton])

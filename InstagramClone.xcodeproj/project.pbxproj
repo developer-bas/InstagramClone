@@ -40,6 +40,7 @@
 		159C5A0C258366580072C1C2 /* InputTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159C5A0B258366580072C1C2 /* InputTextView.swift */; };
 		15CDEC012589B90200E4F446 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CDEC002589B90200E4F446 /* PostService.swift */; };
 		15CDEC042589C85700E4F446 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CDEC032589C85700E4F446 /* Post.swift */; };
+		15CDEC25258AD10200E4F446 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CDEC24258AD10200E4F446 /* PostViewModel.swift */; };
 		98518D1BCB92592E073DCB94 /* Pods_InstagramClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 120FFCFE0DF9B90EA7C288DC /* Pods_InstagramClone.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +82,7 @@
 		159C5A0B258366580072C1C2 /* InputTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextView.swift; sourceTree = "<group>"; };
 		15CDEC002589B90200E4F446 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		15CDEC032589C85700E4F446 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		15CDEC24258AD10200E4F446 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 		8C48B3FCF8EB9E99EC5C7A15 /* Pods-InstagramClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramClone.release.xcconfig"; path = "Target Support Files/Pods-InstagramClone/Pods-InstagramClone.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -177,6 +179,7 @@
 				159C5997257725B00072C1C2 /* AuthenticationViewModel.swift */,
 				159C59FF257C2A820072C1C2 /* ProfileHeaderViewModel.swift */,
 				159C5A0525808E690072C1C2 /* UserCellViewModel.swift */,
+				15CDEC24258AD10200E4F446 /* PostViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15CDEC25258AD10200E4F446 /* PostViewModel.swift in Sources */,
 				159C5995257058AD0072C1C2 /* CustomTextField.swift in Sources */,
 				159C59DF257982810072C1C2 /* ProfileHeader.swift in Sources */,
 				159C5A09258361890072C1C2 /* UploadPostController.swift in Sources */,
