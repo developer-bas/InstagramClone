@@ -21,7 +21,7 @@ class FeedCell : UICollectionViewCell{
         image.contentMode = .scaleToFill
         image.clipsToBounds = true
         image.isUserInteractionEnabled = true
-        image.image = #imageLiteral(resourceName: "venom-7")
+        image.backgroundColor = .lightGray
         return image
     }()
     
@@ -68,7 +68,6 @@ class FeedCell : UICollectionViewCell{
     
     private let likesLabel: UILabel = {
         let label = UILabel()
-        label.text = "1 like"
         label.font = UIFont.boldSystemFont(ofSize: 13)
         return label
     }()
@@ -138,7 +137,12 @@ class FeedCell : UICollectionViewCell{
         
         captionLabel.text = viewModel.caption
         postImageView.sd_setImage(with: viewModel.imageUrl)
+        profileImageView.sd_setImage(with: viewModel.userProfileImageUrl)
+        usernameButton.setTitle(viewModel.username, for: .normal)
+        
+        likesLabel.text = viewModel.likesLabelText
     }
+    
     
     func configureActionButtons(){
         let stackView = UIStackView(arrangedSubviews: [likeButton,commentButton,shareButton])
