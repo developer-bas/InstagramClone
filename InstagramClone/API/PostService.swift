@@ -32,7 +32,7 @@ struct  PostService {
     }
     
     static func fetchPosts(completion: @escaping([Post])->Void){
-        COLLECTION_POSTS.order(by: "timestamo").getDocuments { (snapshot, error) in
+        COLLECTION_POSTS.order(by: "timestamp", descending: true).getDocuments { (snapshot, error) in
             
             guard let documents = snapshot?.documents else {return}
             
