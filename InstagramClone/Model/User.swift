@@ -29,7 +29,7 @@ struct User {
         self.fullname = dictionary["fullname"] as? String ?? ""
         self.profileImageUrl = dictionary["profileImageUrl"] as? String ?? ""
         
-        self.stats = UserStats(followers: 0, following: 0)
+        self.stats = UserStats(followers: 0, following: 0,post: 0)
     }
     
 }
@@ -37,4 +37,5 @@ struct User {
 struct UserStats {
     let followers: Int
     let following: Int
+    let post: Int
 }

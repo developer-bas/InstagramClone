@@ -15,6 +15,7 @@ class FeedController: UICollectionViewController {
 //    MARK: - Properties
     
     private var posts = [Post]()
+    var post : Post?
     
 //  MARK: - Lifecycle
     override func viewDidLoad() {
@@ -43,6 +44,9 @@ class FeedController: UICollectionViewController {
 //    MARK: - API
     
     func fetchPosts(){
+        
+        guard post == nil else{return}
+        
         PostService.fetchPosts { posts in
             
             self.posts = posts
@@ -59,7 +63,11 @@ class FeedController: UICollectionViewController {
         collectionView.backgroundColor = .white
         collectionView.register(FeedCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleLogout))
+        if post == nil {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleLogout))
+        }
+        
+       
         
         navigationItem.title = "Feed"
         let refresher = UIRefreshControl()
@@ -72,12 +80,20 @@ class FeedController: UICollectionViewController {
 extension FeedController  {
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return posts.count
+        return post == nil ?  posts.count : 1
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let  cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! FeedCell
-        cell.viewModel = PostViewModel(post: posts[indexPath.row])
+        
+        if let post = post{
+            cell.viewModel = PostViewModel(post: post)
+            
+        }else{
+            cell.viewModel = PostViewModel(post: posts[indexPath.row])
+            
+          
+        }
         
         return cell
     }

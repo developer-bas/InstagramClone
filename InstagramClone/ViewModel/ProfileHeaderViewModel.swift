@@ -42,7 +42,7 @@ struct ProfileHeaderViewModel {
     }
     
     var numberOfPosts : NSAttributedString {
-        return attributedStackText(value: 4, label: "Post")
+        return attributedStackText(value: user.stats.post, label: "Post")
     }
     
     init(user:User) {
