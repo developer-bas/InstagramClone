@@ -10,6 +10,7 @@
 		1554A7DB2591859E00666AA6 /* CommentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1554A7DA2591859E00666AA6 /* CommentController.swift */; };
 		1554A7DE2591879800666AA6 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1554A7DD2591879800666AA6 /* CommentCell.swift */; };
 		1554A7E12591A7FE00666AA6 /* CommentInputAccesoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1554A7E02591A7FE00666AA6 /* CommentInputAccesoryView.swift */; };
+		1554A7E42593091300666AA6 /* CommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1554A7E32593091300666AA6 /* CommentService.swift */; };
 		159C5953256EBA8B0072C1C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159C5952256EBA8B0072C1C2 /* AppDelegate.swift */; };
 		159C5955256EBA8B0072C1C2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159C5954256EBA8B0072C1C2 /* SceneDelegate.swift */; };
 		159C5957256EBA8B0072C1C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159C5956256EBA8B0072C1C2 /* ViewController.swift */; };
@@ -53,6 +54,7 @@
 		1554A7DA2591859E00666AA6 /* CommentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentController.swift; sourceTree = "<group>"; };
 		1554A7DD2591879800666AA6 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		1554A7E02591A7FE00666AA6 /* CommentInputAccesoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentInputAccesoryView.swift; sourceTree = "<group>"; };
+		1554A7E32593091300666AA6 /* CommentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentService.swift; sourceTree = "<group>"; };
 		159C594F256EBA8B0072C1C2 /* InstagramClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		159C5952256EBA8B0072C1C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		159C5954256EBA8B0072C1C2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				159C59B925782FD90072C1C2 /* AuthService.swift */,
 				159C59F6257B485B0072C1C2 /* UserService.swift */,
 				15CDEC002589B90200E4F446 /* PostService.swift */,
+				1554A7E32593091300666AA6 /* CommentService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 				159C598F2570422F0072C1C2 /* LoginController.swift in Sources */,
 				159C5986256ED88D0072C1C2 /* FeedCell.swift in Sources */,
 				159C5976256ECA9B0072C1C2 /* SearchController.swift in Sources */,
+				1554A7E42593091300666AA6 /* CommentService.swift in Sources */,
 				159C5953256EBA8B0072C1C2 /* AppDelegate.swift in Sources */,
 				159C5998257725B00072C1C2 /* AuthenticationViewModel.swift in Sources */,
 				159C5A032580373A0072C1C2 /* UserCell.swift in Sources */,
