@@ -12,6 +12,7 @@
 		1554A7E12591A7FE00666AA6 /* CommentInputAccesoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1554A7E02591A7FE00666AA6 /* CommentInputAccesoryView.swift */; };
 		1554A7E42593091300666AA6 /* CommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1554A7E32593091300666AA6 /* CommentService.swift */; };
 		1554A7E725930C9500666AA6 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1554A7E625930C9500666AA6 /* Comment.swift */; };
+		1554A7EA259462D800666AA6 /* CommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1554A7E9259462D800666AA6 /* CommentViewModel.swift */; };
 		159C5953256EBA8B0072C1C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159C5952256EBA8B0072C1C2 /* AppDelegate.swift */; };
 		159C5955256EBA8B0072C1C2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159C5954256EBA8B0072C1C2 /* SceneDelegate.swift */; };
 		159C5957256EBA8B0072C1C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159C5956256EBA8B0072C1C2 /* ViewController.swift */; };
@@ -57,6 +58,7 @@
 		1554A7E02591A7FE00666AA6 /* CommentInputAccesoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentInputAccesoryView.swift; sourceTree = "<group>"; };
 		1554A7E32593091300666AA6 /* CommentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentService.swift; sourceTree = "<group>"; };
 		1554A7E625930C9500666AA6 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		1554A7E9259462D800666AA6 /* CommentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewModel.swift; sourceTree = "<group>"; };
 		159C594F256EBA8B0072C1C2 /* InstagramClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		159C5952256EBA8B0072C1C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		159C5954256EBA8B0072C1C2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				159C59FF257C2A820072C1C2 /* ProfileHeaderViewModel.swift */,
 				159C5A0525808E690072C1C2 /* UserCellViewModel.swift */,
 				15CDEC24258AD10200E4F446 /* PostViewModel.swift */,
+				1554A7E9259462D800666AA6 /* CommentViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1554A7EA259462D800666AA6 /* CommentViewModel.swift in Sources */,
 				15CDEC25258AD10200E4F446 /* PostViewModel.swift in Sources */,
 				159C5995257058AD0072C1C2 /* CustomTextField.swift in Sources */,
 				159C59DF257982810072C1C2 /* ProfileHeader.swift in Sources */,
