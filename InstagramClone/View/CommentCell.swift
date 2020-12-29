@@ -42,9 +42,12 @@ class CommentCell: UICollectionViewCell {
         profileImageView.setDimensions(height: 40, width: 40)
         profileImageView.layer.cornerRadius = 40 / 2
         
+        
+        commentLabel.numberOfLines = 0 
         addSubview(commentLabel)
         commentLabel.centerY(inView: profileImageView, leftAnchor: profileImageView.rightAnchor, paddingLeft: 8)
         
+        commentLabel.anchor(right: rightAnchor, paddingRight: 8)
         
         
     }
