@@ -81,15 +81,23 @@ extension CommentController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CommentCell
-        
         cell.viewModel = CommentViewModel(comment: comments[indexPath.row])
-        
         return cell
-        
     }
 }
+
+//  MARK: - UIc
+extension CommentController {
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let uid = comments[indexPath.row].uid
+        UserService.fetchUser(withUid: uid) { user in
+            let controller = ProfileController(user: user)
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
+    }
+}
+
 //  MARK: - UICollectionViewDelegateFlowLayout
 extension CommentController : UICollectionViewDelegateFlowLayout {
     
