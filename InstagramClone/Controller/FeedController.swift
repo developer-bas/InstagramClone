@@ -126,7 +126,15 @@ extension FeedController: FeedCellDelegate{
         if post.didLike {
             print(" ansbdahs")
         }else{
-            print(" dhgfsygf ")
+            PostService.likePost(post: post) { error in
+                if let error = error {
+                    print("Algo salio mal \(error.localizedDescription)")
+                }
+                
+                cell.likeButton.setImage(#imageLiteral(resourceName: "like_selected"), for: .normal)
+                cell.likeButton.tintColor = .red
+                
+            }
         }
     }
 }
