@@ -14,7 +14,9 @@ class FeedController: UICollectionViewController {
     
 //    MARK: - Properties
     
-    private var posts = [Post]()
+    private var posts = [Post](){
+        didSet { collectionView.reloadData()}
+    }
     var post : Post?
     
 //  MARK: - Lifecycle
@@ -52,8 +54,20 @@ class FeedController: UICollectionViewController {
             self.posts = posts
             
             self.collectionView.refreshControl?.endRefreshing()
-            self.collectionView.reloadData()
+            self.checkIfUserLikePost()
+//            self.collectionView.reloadData()
             
+        }
+    }
+    
+    func checkIfUserLikePost(){
+        self.posts.forEach {
+            post in
+            PostService.checkIfUserLikePost(post: post) { didLike in
+                if let index = self.posts.firstIndex(where: { $0.postId == post.postId}){
+                    self.posts[index].didLike = didLike
+                }
+            }
         }
     }
     
@@ -127,6 +141,7 @@ extension FeedController: FeedCellDelegate{
             PostService.unlikePost(post: post) { error in
                 cell.likeButton.setImage(#imageLiteral(resourceName: "like_unselected"), for: .normal)
                 cell.likeButton.tintColor = .black
+                cell.viewModel?.post.likes = post.likes - 1
             }
         }else{
             PostService.likePost(post: post) { error in
@@ -136,6 +151,8 @@ extension FeedController: FeedCellDelegate{
                 
                 cell.likeButton.setImage(#imageLiteral(resourceName: "like_selected"), for: .normal)
                 cell.likeButton.tintColor = .red
+                cell.viewModel?.post.likes = post.likes + 1
+
                 
             }
         }
