@@ -152,16 +152,16 @@ extension FeedController: FeedCellDelegate{
                 print("DEBUG SI ESTAMOS  ENTRANDO AQUI CUANDO LIKE")
             }
         }else{
-            PostService.likePost(post: post) { error in
-                if let error = error {
-                    print("Algo salio mal \(error.localizedDescription)")
-                }
+            PostService.likePost(post: post) { _ in
+//                if let error = error {
+//                    print("Algo salio mal \(error.localizedDescription)")
+//                }
                 
                 cell.likeButton.setImage(#imageLiteral(resourceName: "like_selected"), for: .normal)
                 cell.likeButton.tintColor = .red
                 cell.viewModel?.post.likes = post.likes + 1
                 
-                NotificationService.uploadNotification(toUid: post.ownerUid, type: .like, post: post)
+                NotificationService.uploadNotification(toUid: post.ownerUid, profileImageUrl: post.ownerImageUrl, username: post.ownerUsername, type: .like, post: post)
                 print("DEBUG SI ESTAMOS  ENTRANDO AQUI CUANDO DISLIKE")
                 
             }

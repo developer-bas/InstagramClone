@@ -8,17 +8,21 @@
 import Firebase
 
 struct NotificationService {
-    static func uploadNotification(toUid uid: String, type: NotificationType, post: Post? = nil){
+    static func uploadNotification(toUid uid: String,profileImageUrl: String,username: String, type: NotificationType, post: Post? = nil){
         guard let currentUid =  Auth.auth().currentUser?.uid else {return}
-        guard uid != currentUid else {return}
+        guard uid != currentUid else {
+            print("HICISTE MAL  LAS UID")
+            return}
         
-        print("ENTRAMOS AL SERVICIO DE NOTIFICACION")
+        
         let docRef = COLLECTION_NOTIFICATIONS.document(uid).collection("user-notifications").document()
         
         var data: [String:Any]  = ["timestamp": Timestamp(date: Date()),
                                    "uid": currentUid,
                                    "type": type.rawValue,
-                                   "id": docRef.documentID]
+                                   "id": docRef.documentID,
+                                   "profileImageUrl" : profileImageUrl ,
+                                   "username": username]
                                 
         if let post = post{
             data["postId"] = post.postId
@@ -26,7 +30,7 @@ struct NotificationService {
         }
         
         docRef.setData(data)
-        print("DEBUG: SE DEBIO CREAR")
+        
     }
     static func fetchNotification(completion: @escaping([Notification])->Void){
         guard let uid = Auth.auth().currentUser?.uid else {return}

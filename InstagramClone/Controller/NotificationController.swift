@@ -21,6 +21,7 @@ class NotificationController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
+        fetchNotifications()
     }
 //    MARK: - API
     func fetchNotifications(){
