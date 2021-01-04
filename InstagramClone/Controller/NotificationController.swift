@@ -11,10 +11,26 @@ private let reuseIdentifier = "NotificationCell"
 
 class NotificationController: UITableViewController {
     
+//    MARK: - Properties
+    private var notifications = [Notification]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
     }
+//    MARK: - API
+    func fetchNotifications(){
+        NotificationService.fetchNotification { notifications in
+            self.notifications = notifications
+            print("DEBUG: NOTIFICATIONS")
+        }
+    }
+    
+    
 //    MARK: - Helpers
     func configureTableView(){
         view.backgroundColor = .white
@@ -32,7 +48,7 @@ class NotificationController: UITableViewController {
 
 extension NotificationController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return  10
+        return  notifications.count
         
     }
     
