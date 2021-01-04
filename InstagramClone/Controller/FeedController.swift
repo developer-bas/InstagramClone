@@ -142,6 +142,9 @@ extension FeedController: FeedCellDelegate{
         navigationController?.pushViewController(controller, animated: true)
     }
     func cell(_ cell: FeedCell, didLike post: Post) {
+        guard let tab = tabBarController as? MainTabController else {return}
+        guard let user = tab.user else {return}
+        
         cell.viewModel?.post.didLike.toggle()
         
         if post.didLike {
@@ -149,7 +152,7 @@ extension FeedController: FeedCellDelegate{
                 cell.likeButton.setImage(#imageLiteral(resourceName: "like_unselected"), for: .normal)
                 cell.likeButton.tintColor = .black
                 cell.viewModel?.post.likes = post.likes - 1
-                print("DEBUG SI ESTAMOS  ENTRANDO AQUI CUANDO LIKE")
+                
             }
         }else{
             PostService.likePost(post: post) { _ in
@@ -161,8 +164,8 @@ extension FeedController: FeedCellDelegate{
                 cell.likeButton.tintColor = .red
                 cell.viewModel?.post.likes = post.likes + 1
                 
-                NotificationService.uploadNotification(toUid: post.ownerUid, profileImageUrl: post.ownerImageUrl, username: post.ownerUsername, type: .like, post: post)
-                print("DEBUG SI ESTAMOS  ENTRANDO AQUI CUANDO DISLIKE")
+                NotificationService.uploadNotification(toUid: post.ownerUid, fromUser: user, type: .like, post: post)
+                
                 
             }
         }

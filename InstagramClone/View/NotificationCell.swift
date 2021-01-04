@@ -25,7 +25,8 @@ class NotificationCell : UITableViewCell {
     
     private let infoLabel: UILabel = {
        let label = UILabel()
-        label.text = "Name kajsnnd"
+        label.text = "Cargando ..."
+        label.numberOfLines = 0
         label.font = UIFont.boldSystemFont(ofSize: 14)
         return label
     }()
@@ -101,7 +102,9 @@ class NotificationCell : UITableViewCell {
     func configure(){
         guard  let viewModel = viewModel else {return}
         
-        profileImageView.sd_setImage(with: viewModel.postImageUrl)
+        profileImageView.sd_setImage(with: viewModel.profileImageUrl)
+        postImageView.sd_setImage(with: viewModel.postImageUrl)
+        infoLabel.attributedText = viewModel.notificationMessage
         
     }
 }
