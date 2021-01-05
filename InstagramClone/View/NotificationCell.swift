@@ -7,12 +7,20 @@
 
 import UIKit
 
+protocol NotificationCellDelegate: class {
+    func cell(_ cell: NotificationCell,wantsToFollow uid: String)
+    func cell(_ cell: NotificationCell,wantsToUnfollow uid: String)
+    func cell(_ cell: NotificationCell,wantsToViewPost postId: String)
+}
+
 class NotificationCell : UITableViewCell {
     //    MARK: - Properties
     
     var viewModel : NotificationsViewModel? {
         didSet { configure()}
     }
+    
+    weak var delegate: NotificationCellDelegate? 
     
     private let profileImageView : UIImageView = {
         let iv = UIImageView()
@@ -100,8 +108,11 @@ class NotificationCell : UITableViewCell {
     @objc func handleFollowTapped(){
         
     }
+    
     @objc func handlePostTapped(){
-        
+        guard let viewModel = viewModel else {return}
+        guard let postId = viewModel.notification.postId else {return}
+        delegate?.cell(self, wantsToViewPost: postId)
     }
     
     func configure(){
@@ -112,6 +123,6 @@ class NotificationCell : UITableViewCell {
         infoLabel.attributedText = viewModel.notificationMessage
         
         followButton.isHidden = !viewModel.shouldHidePostImage
-        postI∑mageView.isHidden = viewModel.shouldHidePostImage
+        postImageView.isHidden = viewModel.shouldHidePostImage
     }
 }

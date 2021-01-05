@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 struct NotificationsViewModel {
-    private let notification: Notification
+     let notification: Notification
     
     
     init(notification: Notification) {
