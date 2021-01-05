@@ -27,12 +27,14 @@ class NotificationController: UITableViewController {
     func fetchNotifications(){
         NotificationService.fetchNotification { notifications in
             self.notifications = notifications
-            
+            self.checkIfUserIsFollowed()
         }
     }
     
     func  checkIfUserIsFollowed(){
         notifications.forEach { notification in
+            guard notification.type == .follow else {return}
+            
             UserService.checkIfUserIsFollowed(uid: notification.uid) { isFollowed in
                 if let index = self.notifications.firstIndex(where: { $0.id == notification.id}){
                     self.notifications[index].userIsFollowed = isFollowed
@@ -77,23 +79,38 @@ extension NotificationController {
 
 extension NotificationController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let uid = notifications[indexPath.row].uid
         
+        UserService.fetchUser(withUid: uid) { user in
+            let controller =  ProfileController(user: user)
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
     }
 }
 
     //MARK: - NotificationCellDelegate
 extension NotificationController: NotificationCellDelegate{
     func cell(_ cell: NotificationCell, wantsToFollow uid: String) {
-        print("DEBUG: FOLLOW USER here")
+        
+        UserService.followUser(uid: uid) { _ in
+            cell.viewModel?.notification.userIsFollowed.toggle()
+        }
     }
     
     func cell(_ cell: NotificationCell, wantsToUnfollow uid: String) {
+        
+        UserService.unfollow(uid: uid) { _ in
+            cell.viewModel?.notification.userIsFollowed.toggle()
+        }
         print("DEBUG: UNFOLLOW USER here")
     }
     
     func cell(_ cell: NotificationCell, wantsToViewPost postId: String) {
-        print("DEBUG: POST USER here")
+        PostService.fetchPost(withPostId: postId) { post in
+            let controller = FeedController(collectionViewLayout: UICollectionViewFlowLayout())
+            controller.post = post
+            self.navigationController?.pushViewController(controller, animated: true)
+          
+        }
     }
-    
-    
 }
