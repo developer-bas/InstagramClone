@@ -25,7 +25,9 @@ struct  PostService {
                          "ownerUid": uid] as [String: Any]
 
             
-            COLLECTION_POSTS.addDocument(data: data, completion: completion)
+                        
+            let docRef =  COLLECTION_POSTS.addDocument(data: data, completion: completion)
+            self.updateUserFeedAfterPost(postId: docRef.documentID)
             
         }
         
@@ -139,6 +141,21 @@ struct  PostService {
             }
             
             
+            
+        }
+    }
+    private  static func updateUserFeedAfterPost(postId: String){
+        guard let uid = Auth.auth().currentUser?.uid else {return}
+            
+        COLLECTION_FOLLOWERS.document(uid).collection("user-folloewrs").getDocuments { (snapshot, _) in
+            
+            guard let documents = snapshot?.documents else {return}
+            
+            documents.forEach { docucment in
+                COLLECTION_USERS.document(docucment.documentID).collection("user-feed").document(postId).setData([:])
+            }
+            
+            COLLECTION_USERS.document(uid).collection("user-feed").document(postId).setData([:])
             
         }
     }
