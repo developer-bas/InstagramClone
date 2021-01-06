@@ -25,6 +25,8 @@ class FeedController: UICollectionViewController {
         
         configureUI()
         fetchPosts()
+        
+       
     }
 //    MARK: - Actions
     @objc func handleRefresh(){
@@ -49,14 +51,17 @@ class FeedController: UICollectionViewController {
         
         guard post == nil else{return}
         
-        PostService.fetchPosts { posts in
+//        PostService.fetchPosts { posts in
             
+           
+//            self.collectionView.reloadData()
+            
+//        }
+        PostService.fecthFeedPost { posts in
             self.posts = posts
             
             self.collectionView.refreshControl?.endRefreshing()
             self.checkIfUserLikePost()
-//            self.collectionView.reloadData()
-            
         }
     }
     
