@@ -68,6 +68,7 @@ class LoginController: UIViewController{
         super.viewDidLoad()
         configureUI()
         configureNotificationsObserver()
+        self.hideKeyboardWhenTappedAround()
     }
     
 //    MARK: - Actions
@@ -136,6 +137,8 @@ class LoginController: UIViewController{
         view.addSubview(donHaveAccountbutton)
         donHaveAccountbutton.centerX(inView: view)
         donHaveAccountbutton.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor)
+        
+        
         
     }
     

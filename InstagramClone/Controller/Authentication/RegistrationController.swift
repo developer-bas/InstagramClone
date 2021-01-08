@@ -64,6 +64,7 @@ class RegistrationController: UIViewController{
         super.viewDidLoad()
         configureUI()
         configureNotificationsObserver()
+        self.hideKeyboardWhenTappedAround()
     }
     
 //    MARK: - Actions
