@@ -20,6 +20,7 @@ class FeedController: UICollectionViewController {
     var post : Post?{
         didSet{
             checkIfUserLikePost()
+            collectionView.reloadData()
         }
     }
     
@@ -29,6 +30,10 @@ class FeedController: UICollectionViewController {
         
         configureUI()
         fetchPosts()
+        
+        if post != nil {
+            checkIfUserLikePost()
+        }
         
        
     }
